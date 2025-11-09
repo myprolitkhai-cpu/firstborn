@@ -11,7 +11,7 @@ from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input, Embedding, Conv1D, Dropout, MaxPooling1D, LSTM, Dense
 
 # --- Load resources ---
-model = load_model("model1_hybrid_wisata1.h5")
+model = load_model("model1_hybrid_wisata1.h5", compile=False)
 embedding_matrix = np.load("embedding_matrix_wisata_norm_fix.npy")
 key_norm = pd.read_csv("key_norm.csv")
 
@@ -179,3 +179,4 @@ if uploaded_file is not None:
                     file_name="hasil_prediksi_massal.csv",
                     mime="text/csv"
                 )
+
